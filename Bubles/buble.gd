@@ -4,6 +4,7 @@ extends Area2D
 @onready var buble_sprite: Sprite2D = get_node("Sprite2D")
 @onready var death_sprite: Sprite2D = get_node("Death")
 @onready var death_timer: Timer = get_node("Timer")
+@onready var screen_size = get_viewport().size
 
 @export var move_speed = 3
 var direction
@@ -22,6 +23,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	position += move_speed*direction
+	if(position.x > screen_size.x or position.x < 0 or position.y > screen_size.y or position.y < 0):
+		queue_free()
 
 
 func _input(event):
