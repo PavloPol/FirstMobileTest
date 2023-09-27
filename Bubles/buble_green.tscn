@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuatm7u21ocqp"]
+
+[ext_resource type="PackedScene" uid="uid://d040wbg3l8v7r" path="res://Bubles/buble.tscn" id="1_f6wl8"]
+[ext_resource type="Texture2D" uid="uid://c37n51l7jv5s4" path="res://Art/Green_Buble.png" id="2_w7628"]
+
+[node name="BubleGreen" instance=ExtResource("1_f6wl8")]
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_w7628")
