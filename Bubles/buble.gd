@@ -20,7 +20,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	position += move_speed*direction
 	if(position.x > screen_size.x or position.x < 0 or position.y > screen_size.y or position.y < 0):
 		queue_free()
@@ -30,7 +30,7 @@ func _on_timer_timeout():
 	queue_free()
 
 
-func _on_input_event(viewport, event, shape_idx):
+func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.pressed:
 			buble_sprite.visible = false
