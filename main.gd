@@ -16,7 +16,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if(bubles.get_child_count() <= 20):
 		var random_x = randi() % screen_size.x
 		var random_y = randi() % screen_size.y
