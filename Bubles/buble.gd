@@ -5,7 +5,6 @@ extends Area2D
 @onready var death_sprite: Sprite2D = get_node("Death")
 @onready var death_timer: Timer = get_node("Timer")
 @onready var screen_size = get_viewport().size
-
 @export var move_speed = 3
 var direction
 
@@ -27,16 +26,20 @@ func _process(delta):
 		queue_free()
 
 
-func _input(event):
+func _on_timer_timeout():
+	queue_free()
+
+
+func _on_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+		if event.pressed:
+			buble_sprite.visible = false
+			death_sprite.visible = true
+			set_process(false)
+			death_timer.start()
 	if event is InputEventScreenTouch:
 		if event.pressed and event.index == 0:
 			buble_sprite.visible = false
 			death_sprite.visible = true
 			set_process(false)
 			death_timer.start()
-			# Touch event started on the Area2D
-			# Add your code here
-
-
-func _on_timer_timeout():
-	queue_free()
