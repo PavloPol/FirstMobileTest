@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2bbtcil0inhh"]
+[gd_scene load_steps=3 format=3 uid="uid://c2bbtcil0inhh"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_mpyx0"]
+[ext_resource type="AudioStream" uid="uid://cfbixb5tkwey3" path="res://Music/game-music-loop-19-153393 (mp3cut.net).mp3" id="2_qn1f5"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_mpyx0")
@@ -24,5 +25,9 @@ text = "Start"
 metadata/_edit_use_anchors_ = true
 
 [node name="Bubles" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_qn1f5")
+autoplay = true
 
 [connection signal="pressed" from="HUD/StartButton" to="." method="_on_start_button_pressed"]

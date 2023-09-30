@@ -19,6 +19,9 @@ config/icon="res://icon.svg"
 
 window/size/mode=3
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/stretch/scale=1.3
+window/handheld/orientation=6
 
 [rendering]
 
